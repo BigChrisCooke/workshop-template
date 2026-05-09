@@ -1,0 +1,52 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description,
+  canonicalPath = Astro.url.pathname,
+  ogImage = '/og-default.png',
+} = Astro.props;
+
+const canonicalURL = new URL(canonicalPath, Astro.site);
+const ogImageURL = new URL(ogImage, Astro.site);
+---
+
+<!doctype html>
+<html lang="en" class="h-full scroll-smooth antialiased">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <slot name="head" />
+  </head>
+  <body class="flex h-full flex-col">
+    <slot />
+  </body>
+</html>

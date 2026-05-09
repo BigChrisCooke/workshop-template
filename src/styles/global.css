@@ -1,0 +1,11 @@
+@import '@fontsource-variable/inter/index.css';
+@import 'tailwindcss';
+
+@theme {
+  /* Fonts — update these to match brand.md */
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+
+  /* Brand colours — update these to match brand.md */
+  --color-brand: #6366f1;
+  --color-brand-dark: #4f46e5;
+}
