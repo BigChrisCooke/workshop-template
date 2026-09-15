@@ -2,6 +2,8 @@
 
 > This file is already in your project. Claude Code reads it automatically every session and uses it as the rulebook. You don't need to do anything with it.
 
+> **Setup and terminal safety:** before helping with installation, setup, dependency installation, terminal commands, build verification, or troubleshooting, read `WORKSHOP-SETUP-AGENT.md` in full. Its exact-command, audit, security, and completion-gate rules are mandatory.
+
 ---
 
 ## Project type

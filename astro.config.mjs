@@ -1,7 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
-import vercel from '@astrojs/vercel';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
@@ -9,7 +8,6 @@ export default defineConfig({
   site: 'https://your-site.com',
   trailingSlash: 'never',
   output: 'static',
-  adapter: vercel(),
   integrations: [
     sitemap({
       changefreq: 'monthly',
